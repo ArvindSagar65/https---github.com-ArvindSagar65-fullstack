@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cart-items, .cart-total {
+        width: 48%;
+    }
+    
+    .cart-items h2, .cart-total h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: #333;
+    }
+    
+    .cart-items ul {
+        list-style-type: none;
+    }
+    
+    .cart-items ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+        font-size: 18px;
+        color: #555;
+    }
+    
+    .cart-total p {
+        font-size: 28px;
+        color: #333;
+        text-align: right;
+    }
+    
+</style>
+<body>
+    <div class="flex flex-col">
+    <div class="container">
+        <div class="container">
+        <div class="cart-items">
+          <h2>Items in Your Cart</h2>
+          <ul></ul>
+        </div>
+        <div class="images"></div> 
+      </div>
+    </div>
+    <div class="cart-total flex flex-row container">
+        <div class="flex-auto">
+            <button onclick="clearCart()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-52">Clear Cart</button>
+            <a href="/first/menu.html"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Menu</button></a>
+            </div>
+        <p class="mt-8">$0.00</p> 
+    </div>
+
+
+</body>
+</html>

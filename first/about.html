@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Paradise - About Us</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+      }
+      .center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 15px 20px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .logo {
+        font-family: 'Limelight', cursive;
+        font-size: 2rem;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 40px auto;
+        max-width: 1200px;
+        padding: 20px;
+        gap: 30px;
+      }
+      .about-section {
+        flex: 1;
+        background-color: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      #testimonials {
+        flex: 2;
+        background-color: #e0e0e0;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        color: #444;
+      }
+      .testimonial {
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 12px;
+        background-color: #f0f0f0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      input, textarea, button {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 1rem;
+      }
+      textarea {
+        resize: none;
+        height: 120px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="center">
+      <div class="nav-left">
+        <h2><a href="index.html">Home</a></h2>
+        <h2><a href="about.html">About</a></h2>
+      </div>
+
+      <div class="logo">Food Paradise</div>
+
+      <div class="nav-right">
+        <h2><a href="contact.html">Contacts</a></h2>
+        <h2><a href="menu.html">Menu</a></h2>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <section id="testimonials">
+        <h2>Customer Testimonials</h2>
+        <div id="testimonial-list">
+     
+        </div>
+        <h3>Leave a Review</h3>
+        <form id="testimonial-form">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <textarea id="review" placeholder="Write your review here..." required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </section>
+
+      <section class="about-section">
+        <h2>About Us</h2>
+        <p>Welcome to Food Paradise! We are passionate about providing delightful meals that make every occasion special.</p>
+        <p>Our menu offers a variety of dishes made from fresh, high-quality ingredients. Join us for an unforgettable culinary experience!</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Food Paradise. All rights reserved.</p>
+      <p>Contact us: +1234556677 | Email: info@foodparadise.com</p>
+    </footer>
+
+    <script>
+      const form = document.getElementById('testimonial-form');
+      const testimonialList = document.getElementById('testimonial-list');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const review = document.getElementById('review').value;
+
+        const testimonial = document.createElement('div');
+        testimonial.className = 'testimonial';
+        testimonial.innerHTML = `<strong>${name}</strong><p>${review}</p>`;
+
+        testimonialList.appendChild(testimonial);
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
